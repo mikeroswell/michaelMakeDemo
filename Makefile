@@ -1,4 +1,4 @@
-## This is an ample Makefile for getting started with makestuff
+## This is an example Makefile for getting started with makestuff
 
 current: target
 -include target.mk

@@ -23,12 +23,12 @@ Sources += $(wildcard *.md)
 
 ######################################################################
 
-autopipeR = orli
+autopipeR = Orli
 
 ## R Machinery
 Sources += $(wildcard *.R)
 
-## Orli!!!!~
+## Orli!!!!
 
 ## base.R pars.R plotMod.R SIRModFun.R
 ## This is a rule that make already knows; it's here for the user

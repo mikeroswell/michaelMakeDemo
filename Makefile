@@ -23,13 +23,28 @@ Sources += $(wildcard *.md)
 
 ######################################################################
 
+autopipeR = orli
 
 ## R Machinery
 Sources += $(wildcard *.R)
 
+## Orli!!!!~
+
+## base.R pars.R plotMod.R SIRModFun.R
+## This is a rule that make already knows; it's here for the user
+## base.Rout: base.R
+
+## To make a parameters file we use the shell script pars.R to cascade one or more other files; this is a default rule in case there's just one
+
+## base.pars.Rout: base.R
+%.pars.Rout: pars.R %.R
+	$(pipeR)
+
+### make a plot for a given set of parameters
+%.plotMod.Rout: plotMod.R SIRModFun.R %.pars.rda
+	$(pipeR)
+
 ###############################
-
-
 
 ### Makestuff
 
@@ -52,13 +67,7 @@ makestuff/%.stamp:
 
 -include makestuff/os.mk
 
-## -include makestuff/pipeR.mk
+-include makestuff/pipeR.mk
 
 -include makestuff/git.mk
 -include makestuff/visual.mk
-
-
-
-### make a plot
-%.plotMod.Rout: plotMod.R SIRModFun.R pars.R base.R
-	$(pipeR)

@@ -8,7 +8,18 @@ Ignore = target.mk
 # -include makestuff/perl.def
 
 vim_session:
-	bash -cl "vmt"
+	bash -cl "vmt README.md"
+
+######################################################################
+
+# Don't know if this will create the .md files... I'm about to find out
+# First attempt was a fail, now I added to the bash line
+
+######################################################################
+
+Sources += Makefile README.md
+
+Sources += $(wildcard *.md)
 
 ######################################################################
 

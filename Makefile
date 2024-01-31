@@ -23,11 +23,25 @@ Sources += $(wildcard *.md)
 
 ######################################################################
 
+
+## R Machinery
+Sources += $(wildcard *.R)
+
+###############################
+
+
+
 ### Makestuff
 
 Sources += Makefile
 
+
+## Dushoff seems to think .gitignore should not be pushed. I'm not clear on the 
+## theory of this yet. 
+
 Ignore += makestuff
+Ignore += .gitignore 
+
 msrepo = https://github.com/dushoff
 
 Makefile: makestuff/00.stamp

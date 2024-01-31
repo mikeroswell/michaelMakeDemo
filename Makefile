@@ -1,4 +1,5 @@
 ## This is an example Makefile for getting started with makestuff
+## I'll try to simulate some kind of SIR model's behavior
 
 current: target
 -include target.mk

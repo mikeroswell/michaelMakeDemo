@@ -56,3 +56,9 @@ makestuff/%.stamp:
 
 -include makestuff/git.mk
 -include makestuff/visual.mk
+
+
+
+### make a plot
+%.plotMod.Rout: plotMod.R SIRModFun.R pars.R base.R
+	$(pipeR)

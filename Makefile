@@ -50,7 +50,7 @@ Sources += $(wildcard *.R)
 ### make a plot for a given set of parameters and model specification
 ## fastRecoveryBigStart.plotMod.Rout:
 ## base.plotMod.Rout:
-%.plotMod.Rout: plotMod.R %.R %.SIRModFun.rda %.pars.rda
+%.plotMod.Rout: plotMod.R %.SIRModFun.rda %.pars.rda
 	$(pipeR)
 
 ###############################

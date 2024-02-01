@@ -44,11 +44,12 @@ Sources += $(wildcard *.R)
 
 %.SIRModFun.Rout: SIRModFun.R %.R
 	$(pipeR)
-	
-	
+
 ## Run the simulation
 
 ### make a plot for a given set of parameters and model specification
+## fastRecoveryBigStart.plotMod.Rout:
+## base.plotMod.Rout:
 %.plotMod.Rout: plotMod.R %.R %.SIRModFun.rda %.pars.rda
 	$(pipeR)
 
@@ -57,7 +58,6 @@ Sources += $(wildcard *.R)
 ### Makestuff
 
 Sources += Makefile
-
 
 ## Dushoff seems to think .gitignore should not be pushed. I'm not clear on the 
 ## theory of this yet. 

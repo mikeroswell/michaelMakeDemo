@@ -3,9 +3,11 @@ library(tidyr)
 library(ggplot2)
 library(shellpipes)
 theme_set(theme_test())
+sourceFiles()
 loadEnvironments()
+startGraphics()
 
-y_stoch = data.frame(stochsim_SIR(c(0,60)
+y_stoch = data.frame(stochsim_SIR(c(0, ts)
                                   , y0
                                   , pars))
 
@@ -16,3 +18,4 @@ stochPlot <- y_stoch %>%
     geom_line() 
 
 print(stochPlot)
+rdsSave(stochPlot)

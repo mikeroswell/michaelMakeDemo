@@ -37,11 +37,19 @@ Sources += $(wildcard *.R)
 ## To make a parameters file we use the shell script pars.R to cascade one or more other files; this is a default rule in case there's just one
 
 ## base.pars.Rout: base.R
-%.pars.Rout: pars.R %.R
+%.pars.Rout: pars.R base.R %.R
 	$(pipeR)
 
-### make a plot for a given set of parameters
-%.plotMod.Rout: plotMod.R SIRModFun.R %.pars.rda
+## we could do something similar to be able to use potentially different models...
+
+%.SIRModFun.Rout: SIRModFun.R %.R
+	$(pipeR)
+	
+	
+## Run the simulation
+
+### make a plot for a given set of parameters and model specification
+%.plotMod.Rout: plotMod.R %.R %.SIRModFun.rda %.pars.rda
 	$(pipeR)
 
 ###############################

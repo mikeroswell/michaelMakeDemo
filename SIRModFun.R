@@ -46,3 +46,6 @@ stochsim_SIR = function(trange, y0, pars){
     colnames(df.res) = c('time', 'S', 'I', 'R')
     return(df.res)
 }
+
+
+shellpipes::saveEnvironment()
